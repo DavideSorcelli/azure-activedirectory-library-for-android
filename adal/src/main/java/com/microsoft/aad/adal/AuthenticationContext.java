@@ -36,6 +36,7 @@ import android.os.NetworkOnMainThreadException;
 import android.support.annotation.Nullable;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.SparseArray;
 
 import com.googleblog.android_developers.PRNGFixes;
@@ -532,6 +533,8 @@ public class AuthenticationContext {
                               @Nullable String extraQueryParameters, @Nullable final String claims,
                               final AuthenticationCallback<AuthenticationResult> callback, String apiEventString,
                               final IWindowComponent fragment, final boolean useDialog){
+
+        Log.d("ADAL", "---------- IN ACQUIRE TOKEN --------");
 
         throwIfClaimsInBothExtraQpAndClaimsParameter(claims, extraQueryParameters);
 
